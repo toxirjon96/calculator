@@ -18,4 +18,5 @@ export 'package:calculator/src/service/calculator_service.dart';
 
 //exception
 export 'package:calculator/src/exception/dividing_zero_exception.dart';
+export 'package:calculator/src/exception/parsing_exception.dart';
 

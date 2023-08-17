@@ -124,7 +124,11 @@ class CalculatorService implements CalculatorRepository {
           _operation[i] == '-' ||
           _operation[i] == '+' ||
           _operation[i] == '/') {
-        numbers.add(double.parse(temp));
+        try {
+          numbers.add(double.parse(temp));
+        } catch (e) {
+          _result = "Number parsing error!";
+        }
         operations.add(_operation[i].trim());
         temp = "";
       } else {
@@ -133,7 +137,11 @@ class CalculatorService implements CalculatorRepository {
     }
 
     if (temp.isNotEmpty) {
-      numbers.add(double.parse(temp));
+      try {
+        numbers.add(double.parse(temp));
+      } catch (e) {
+        _result = "Number parsing error!";
+      }
       temp = "";
     }
     try {
